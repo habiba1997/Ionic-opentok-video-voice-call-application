@@ -1,0 +1,22 @@
+button.buttons{
+    width: 9vh; height: 9vh; 
+    border-radius: 50%;
+   
+    opacity: 60%;
+    z-index: 1000;
+}
+
+.iconss{
+    width: 6vh; height: 6vh; 
+
+}
+
+button.UpButtons{
+    background-color: white;
+    width: 5vh; height: 5vh; 
+    border-radius: 50%;
+    position: absolute; 
+    top: 1%;
+    opacity: 60%;
+    z-index: 1000;
+}

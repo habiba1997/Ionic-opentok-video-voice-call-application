@@ -1,0 +1,73 @@
+
+<ion-content>
+  
+  <div>
+   <button *ngIf="!isAudio" style="background-color: white;
+     width: 7vh; height: 7vh; 
+     border-radius: 50%;
+     position: absolute; 
+     top: 2%;
+     right:2%;
+     opacity: 60%;
+     z-index: 1000;" (click)="cameraCycle()">
+     <ion-icon style="width: 5vh; height: 5vh;" name="camera-reverse-sharp"></ion-icon>
+   </button>
+ 
+   <div id="publisher"  
+   style="width: 18vh; height: 33vh; 
+   position: absolute; 
+   top: 3%; left: 5%;"  [style.z-index]="isAudio? 0 : 1000"></div>
+
+   <div id="subscriber" style="
+   width: 100%; height: 100vh; 
+   position: absolute; 
+   top: 0; left: 0; z-index: 500;">
+   </div>
+   
+   <!-- disabled={{disableVideo}} -->
+   <ion-grid style="position: absolute; 
+   bottom: 8%;align-content: center;display: flex;justify-content: center;z-index: 1000;" [style.left]="isAudio? '20%' : '10%'">
+     <ion-row>
+       <ion-col *ngIf="!isAudio">
+           <button [disabled]="disableVideo" class="buttons" style="background-color: white;" (click)="videoToggle()">
+               <div  *ngIf="!videoToggleVariable"> 
+                   <span class="iconss iconify" data-icon="bi-camera-video-off-fill" data-inline="false"></span>
+               </div> 
+               <div  *ngIf="videoToggleVariable"> 
+                   <span  class="iconss iconify" data-icon="bi-camera-video-fill" data-inline="false"></span>
+               </div>
+           </button>
+       </ion-col>
+       <ion-col>
+         <!-- disabled={{myCondition}} -->
+           <button   class="buttons" style="background-color: white;" (click)="speakerToggle()">
+             <div *ngIf="!speaker"> 
+               <ion-icon class="iconss" name="volume-low-sharp"></ion-icon>
+               <!-- <ion-icon class="iconss" name="volume-mute-sharp"></ion-icon> -->
+             </div> 
+             <div *ngIf="speaker"> 
+               <ion-icon class="iconss" name="volume-high-sharp"></ion-icon>
+             </div> 
+           </button>
+       </ion-col>
+       <ion-col>
+           <button class="buttons" style="background-color: white;" (click)="muteToggle()">
+             <div  *ngIf="!mute"> 
+               <ion-icon class="iconss" name="mic-sharp"></ion-icon>
+             </div> 
+             <div *ngIf="mute">
+               <ion-icon class="iconss" name="mic-off-sharp"></ion-icon>
+             </div> 
+           </button>
+       </ion-col>
+       <ion-col>
+           <button class="buttons" style="background-color: #fd294d;" (click)="diconnect()">
+             <span class="iconss iconify" data-icon="ic-round-call-end" data-inline="false"></span>
+           </button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+ </div> 
+ 
+ </ion-content>
+  

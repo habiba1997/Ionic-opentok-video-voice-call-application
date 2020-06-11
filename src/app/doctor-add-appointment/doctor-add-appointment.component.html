@@ -1,0 +1,83 @@
+<ion-header >
+  <ion-toolbar class="header bold">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-title>Appointment Information</ion-title>
+  
+  </ion-toolbar>
+    
+</ion-header>
+
+
+<ion-content style="font-size: large;">
+  <!-- <ion-item>
+    <ion-button primary (click)="click()">Dat and time</ion-button>
+  </ion-item> -->
+  
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+            <ion-label>Date <span style="color:red">*</span></ion-label>
+      </ion-row>
+      <ion-row>
+            <ion-datetime displayFormat="DDDD MM, YYYY" pickerFormat="DDDD MM, YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>    
+            <ion-label>Time <span style="color:red">*</span></ion-label>
+      </ion-row>
+      <ion-row>
+            <ion-datetime displayFormat="hh:mm A" pickerFormat="hh:mm A" [(ngModel)]="myTime"></ion-datetime>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>    
+            <ion-label >Duration <span style="color:red">*</span></ion-label>
+      </ion-row>
+      <ion-row>
+        <div class="input-container">
+          <!-- <input type="text"  [(ngModel)]="myDuration"/> -->
+            <input style="border: transparent;" type="number" [(ngModel)]="myDuration"/>
+         </div>    
+         
+     
+        </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <!-- <ion-item>
+    <ion-grid>
+      <ion-row>    
+            <ion-label >Duration <span style="color:red">*</span></ion-label>
+      </ion-row>
+      <ion-row>
+      
+         <ion-input type="number" [(ngModel)]="myDuration">
+         </ion-input>
+         <ion-label>minutes</ion-label>
+      
+        </ion-row>
+    </ion-grid>
+  </ion-item> -->
+  <!-- <ion-button   primary expand="block" (click)="submit()">Dat and time</ion-button> -->
+
+<h2 style="display: flex; text-align: center;justify-content: center;align-items: center;color: #dc3545;" *ngIf="error"> Please fill all the required inputs </h2>
+  <ion-tabs>
+    <ion-tab-bar style="background-color: #02C39A;font: large;" slot="bottom">
+      <ion-tab-button  style="font-size: large;" (click)="check()" style="background-color: #02C39A;">
+        <ion-label style="font-size: large;" class="header">Add Appointment</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
+
+

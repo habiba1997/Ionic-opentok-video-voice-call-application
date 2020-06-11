@@ -1,0 +1,25 @@
+.header{
+    --background:  #02C39A;
+     color: white;
+     font-size: large;
+text-align: center;
+}
+.bold
+{
+  font-weight: bold;
+}
+
+ion-card-content{
+  color: #3e444a;
+  font-size: 120%;
+}
+
+.block{
+  display: block
+}
+.center{
+  display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+}

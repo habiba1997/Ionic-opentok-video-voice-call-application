@@ -1,0 +1,46 @@
+<ion-header >
+  <ion-toolbar class="header bold">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-title>Appointment</ion-title>
+  
+  </ion-toolbar>
+    
+</ion-header>
+  
+
+<ion-content  >
+  <ion-card *ngFor="let card of cards" style="display:flexbox;align-items: center; align-content: center;justify-content: center;">
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-start">Id: {{card.Id}}</ion-card-subtitle>
+      <ion-card-title><span class="bold">Date: </span>{{card.appointment.date}}</ion-card-title>
+      <ion-card-title><span class="bold">Time: </span>{{card.appointment.time}}</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+      <ion-label><span class="bold">Duration: </span> {{card.duration}}  </ion-label>
+    </ion-card-content>
+    <ion-card-content *ngIf="card.registered">  
+      <span class="bold">Patient Data: </span>
+        <ion-card>
+          <ion-card-header>
+                <ion-img *ngIf="card.patient.user_image!=null" class="center"  [src]="card.patient.user_image"></ion-img>
+                <ion-card-title class="bold center">{{card.patient.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- <span class="bold">Patient Id: </span>{{card.patientId}}  <br> -->
+            <span class="bold">Age: </span> {{card.patient.age}}  <br>
+            <span class="bold">Mobile: </span> {{card.patient.mobile}} <br>
+            <span class="bold">Address: </span>{{card.patient.address}} <br>
+         
+             
+          </ion-card-content>
+        </ion-card>    
+      <ion-card-subtitle  [style.color]="card.registered? '#dc3545' : '#428bca'"  class="ion-text-end" > {{ card.registered? ('Filled') : ('Free') }} </ion-card-subtitle>      
+    </ion-card-content>
+
+  </ion-card>
+  
+
+</ion-content>

@@ -1,0 +1,121 @@
+
+[
+
+    {
+        "Id":1,
+        "doctorId":23,
+        "patientId":null,
+        "registered":false,
+        "appointment":{
+                        "date":"2020-02-14",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+
+                      
+
+    },
+    {
+        "Id":2,
+        "doctorId":23,
+        "patientId":72,
+        "registered":true,
+        "appointment":{
+                        "date":"2020-06-10",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":3,
+        "doctorId":23,
+        "patientId":null,
+        "registered":false,
+        "appointment":{
+                        "date":"2020-03-14",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":4,
+        "doctorId":23,
+        "patientId":56,
+        "registered":true,
+        "appointment":{
+                        "date":"2020-06-14",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":5,
+        "doctorId":23,
+        "patientId":null,
+        "registered":false,
+        "appointment":{
+                        "date":"2020-06-10",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":6,
+        "doctorId":23,
+        "patientId":31,
+        "registered":true,
+        "appointment":{
+                        "date":"2020-07-14",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":7,
+        "doctorId":23,
+        "patientId":null,
+        "registered":false,
+        "appointment":{
+                        "date":"2020-08-14",
+                        "time":"19:20:26.38"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":8,
+        "doctorId":23,
+        "patientId":null,
+        "registered":false,
+        "appointment":{
+                        "date":"2020-02-19",
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900 
+                      
+
+    },
+    {
+        "Id":2,
+        "doctorId":23,
+        "patientId":72,
+        "registered":true,
+        "appointment":{
+                        "date":"2020-06-10", 
+                        "time":"09:51:28 PM"
+                      },
+        "duration": 900
+        
+    }
+]

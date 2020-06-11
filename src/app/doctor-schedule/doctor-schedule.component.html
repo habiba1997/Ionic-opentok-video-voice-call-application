@@ -1,0 +1,73 @@
+<ion-header >
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-title > Schedule</ion-title>
+
+    <ion-buttons slot="end">
+        <ion-label>Calender</ion-label>
+        <ion-toggle [ngModel]="toggleState" (ngModelChange)="toggleContent($event)"  color="light"></ion-toggle>
+    </ion-buttons> 
+    
+  
+  </ion-toolbar>
+    
+</ion-header>
+
+
+<ion-content *ngIf="toggleState">
+<div style="width: 100%; height: 100%;background-color: #02C39A;">
+  <p style="display: flex;justify-content: center;align-items: center;text-align: center;color: white;">
+    Calender
+  </p>
+</div>
+</ion-content>
+
+
+<ion-content *ngIf="!toggleState">
+  <ion-grid style="width: 90%;margin-top: 2%;" >
+        <ion-row>
+                <ion-col [style.background-color]="checkIfEqualToday(-1)? '#02C39A' : 'transparent'" size="4">
+                        <div (click)="tabClick(-1)">Past</div>
+                </ion-col>
+                <ion-col class="border" [style.background-color]="checkIfEqualToday(0)? '#02C39A' : 'transparent'" size="4" >
+                  <div (click)="tabClick(0)">Today</div>
+                </ion-col>
+                <ion-col [style.background-color]="checkIfEqualToday(1)? '#02C39A' : 'transparent'" size="4" >
+                  <div (click)="tabClick(1)">Upcoming</div>
+                </ion-col>
+            </ion-row>
+      </ion-grid>
+  
+   <!-- <ion-list-header>
+      Recent Conversations
+    </ion-list-header> -->
+ <!-- <ion-avatar slot="start"><img src="./avatar-finn.png">
+      </ion-avatar> -->
+  
+  <ion-list>
+
+    <ion-item *ngFor="let app of appointments" (click)="sendAndNavigate(app)" >
+      <ion-label >
+        <p  [style.color]="app.registered? '#dc3545' : '#428bca'"  class="ion-text-end" > {{ app.registered? ('Filled') : ('Free') }} </p>
+        <!-- <p *ngIf="!app.registered" style="color: #428bca;" class="ion-text-end">Free</p> -->
+        <h2>{{app.appointment.date}} {{app.appointment.time}}</h2>
+        <!-- <p style="position: absolute;right: 3%;font-weight: bold;color: #343a40;">></p> -->
+        <ion-icon style="position: absolute;right: 3%;color: #343a40;" name="chevron-forward-outline"></ion-icon>
+        <h3 *ngIf="app.patient">Patient Name: {{app.patient.name}}</h3>
+        <p>Duration: {{app.duration/60}}</p>
+        
+      </ion-label>
+    </ion-item>
+
+    
+  </ion-list>
+
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="navigate.navigateTo('/home/schedule/add-appointment')">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

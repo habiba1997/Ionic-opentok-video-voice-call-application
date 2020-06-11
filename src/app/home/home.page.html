@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Doctor
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  style="text-align:center" padding>
+    <ion-button color="dark" (click)="startVideoCall()">Start Video Call</ion-button>
+    <ion-button color="dark" (click)="startVoiceCall()">Start Voice Call</ion-button>
+    <ion-button color="primary" (click)="doctorSchedule()">Schedule</ion-button>
+
+    <ion-button color="success" (click)="addAppointment()">add appointment</ion-button>
+
+    <ion-button color="danger" (click)="appointment()">add appointment</ion-button>
+
+</ion-content>

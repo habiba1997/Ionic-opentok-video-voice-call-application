@@ -1,0 +1,35 @@
+.header{
+    --background:  #02C39A;
+     color: white;
+     font-size: large;
+text-align: center;
+}
+.bold
+{
+  font-weight: bold;
+
+}
+ion-grid{
+  margin: 7% 5%;
+  // padding: 10% 5%;
+  // border: solid 2px #02C39A;
+  // border-radius: 5%;
+}
+ion-item{
+  // text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-container {
+  position: relative;
+  float: left;
+  top: 0;
+}
+
+.input-container:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: 'minutes';
+}  
